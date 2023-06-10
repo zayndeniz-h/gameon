@@ -34,7 +34,7 @@ class CustomButton extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
           Text(
-            title ?? locale.continuee,
+            title ?? locale.continuee.toUpperCase(),
             style: style ?? Theme.of(context).textTheme.labelLarge,
             textAlign: TextAlign.center,
           ),
