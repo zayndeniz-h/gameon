@@ -183,12 +183,22 @@ class LevelScreen extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  Text(
-                    locale.earnPointsToReach,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall
-                        ?.copyWith(fontSize: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 60,
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color(0xff10210E),
+                    ),
+                    child: Text(
+                      locale.earnPointsToReach,
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleSmall
+                          ?.copyWith(fontSize: 10),
+                    ),
                   ),
                   const SizedBox(
                     height: 36,
@@ -199,41 +209,54 @@ class LevelScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
-              child: Text(
-                locale.howItWorks,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontSize: 15,
-                    ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: const Color(0xff10210E),
               ),
-            ),
-            const SizedBox(
-              height: 36,
-            ),
-            buildHowItWorkRow(
-              context,
-              'assets/point_levels/level.png',
-              locale.youllGetPoints,
-              locale.joinedMatch,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            buildHowItWorkRow(
-              context,
-              'assets/point_levels/like.png',
-              locale.ifYouJoinedAndWon,
-              locale.earnedPoints,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            buildHowItWorkRow(
-              context,
-              'assets/point_levels/dislike.png',
-              locale.ifYouJoinedAndLose,
-              locale.losePoints,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                    child: Text(
+                      locale.howItWorks,
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            fontSize: 15,
+                          ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 36,
+                  ),
+                  buildHowItWorkRow(
+                    context,
+                    'assets/point_levels/level.png',
+                    locale.youllGetPoints,
+                    locale.joinedMatch,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  buildHowItWorkRow(
+                    context,
+                    'assets/point_levels/like.png',
+                    locale.ifYouJoinedAndWon,
+                    locale.earnedPoints,
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  buildHowItWorkRow(
+                    context,
+                    'assets/point_levels/dislike.png',
+                    locale.ifYouJoinedAndLose,
+                    locale.losePoints,
+                  ),
+                ],
+              ),
             ),
           ],
         ),

@@ -615,6 +615,46 @@ class AppLocalizations {
   String get continuee {
     return _localizedValues[locale.languageCode]!['continuee'] ?? '';
   }
+
+  String get playersOnline {
+    return _localizedValues[locale.languageCode]!['playersOnline'] ?? '';
+  }
+
+  String get cashBuyIn {
+    return _localizedValues[locale.languageCode]!['cashBuyIn'] ?? '';
+  }
+
+  String get holdem {
+    return _localizedValues[locale.languageCode]!['holdem'] ?? '';
+  }
+
+  String get availableBalance {
+    return _localizedValues[locale.languageCode]!['availableBalance'] ?? '';
+  }
+
+  String get min {
+    return _localizedValues[locale.languageCode]!['min'] ?? '';
+  }
+
+  String get max {
+    return _localizedValues[locale.languageCode]!['max'] ?? '';
+  }
+
+  String get buyInAmount {
+    return _localizedValues[locale.languageCode]!['buyInAmount'] ?? '';
+  }
+
+  String get ok {
+    return _localizedValues[locale.languageCode]!['ok'] ?? '';
+  }
+
+  String get you {
+    return _localizedValues[locale.languageCode]!['you'] ?? '';
+  }
+
+  String get potAmt {
+    return _localizedValues[locale.languageCode]!['potAmt'] ?? '';
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

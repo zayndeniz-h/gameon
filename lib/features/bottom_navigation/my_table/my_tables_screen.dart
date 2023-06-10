@@ -25,6 +25,7 @@ class MyTablesScreen extends StatelessWidget {
           image: DecorationImage(
             image: AssetImage('assets/bg.png'),
             fit: BoxFit.cover,
+            opacity: 0.4,
           ),
         ),
         child: ListView(

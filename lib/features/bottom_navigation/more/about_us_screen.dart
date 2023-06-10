@@ -20,7 +20,7 @@ class AboutUsScreen extends StatelessWidget {
               ),
               Image.asset(
                 'assets/logo.png',
-                scale: 4,
+                width: 150,
               ),
             ],
           ),

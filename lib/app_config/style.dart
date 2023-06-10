@@ -54,7 +54,7 @@ class AppTheme {
       ), //caption
     ),
     colorScheme: ColorScheme.fromSwatch(
-      backgroundColor: const Color(0xff220708),
+      backgroundColor: const Color(0xff075402),
     ),
   );
 }

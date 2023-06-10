@@ -18,7 +18,7 @@ class SupportScreen extends StatelessWidget {
               image: DecorationImage(
                 image: AssetImage('assets/bg.png'),
                 fit: BoxFit.cover,
-                opacity: 0.4,
+                opacity: 0.25,
               ),
             ),
             height: 280,

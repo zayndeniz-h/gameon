@@ -149,7 +149,7 @@ class _MoreScreenState extends State<MoreScreen> {
             onTap: () => Navigator.pushNamed(context, PageRoutes.levelScreen),
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 18),
-              color: const Color(0xff391615),
+              color: const Color(0xff133511),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -219,7 +219,7 @@ class _MoreScreenState extends State<MoreScreen> {
             ),
           ),
           Container(
-            color: const Color(0xff270D0C),
+            color: const Color(0xff112811),
             child: ListView.separated(
               physics: const NeverScrollableScrollPhysics(),
               padding: const EdgeInsets.symmetric(

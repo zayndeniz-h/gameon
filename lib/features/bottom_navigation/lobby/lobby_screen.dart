@@ -193,7 +193,7 @@ class CashTablesTab extends StatelessWidget {
                               width: 8,
                             ),
                             Text(
-                              '10 ${locale.seats}',
+                              '${15 * (index + 1)} ${locale.playersOnline}',
                               style: Theme.of(context)
                                   .textTheme
                                   .titleSmall
@@ -224,7 +224,7 @@ class CashTablesTab extends StatelessWidget {
                   SizedBox(
                     width: 128,
                     child: CustomButton(
-                      title: '\$ 50 / \$ 100',
+                      title: '\$ 50',
                       bgImage: 'assets/button/button2.png',
                       onTap: () => Navigator.pushNamed(
                         context,
@@ -273,7 +273,7 @@ class LeaderboardTab extends StatelessWidget {
         ),
         Expanded(
           child: Container(
-            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.9),
             child: ListView.separated(
               padding:
                   const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),

@@ -80,7 +80,7 @@ class MyProfileScreen extends StatelessWidget {
                 Text(
                   locale.logout,
                   style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: Theme.of(context).primaryColor,
+                        color: const Color(0xff24CE3E),
                         fontSize: 15,
                       ),
                 ),

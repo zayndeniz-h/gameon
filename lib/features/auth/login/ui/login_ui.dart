@@ -47,6 +47,9 @@ class LoginUIState extends State<LoginUI> {
                       color: Theme.of(context).scaffoldBackgroundColor,
                       child: Column(
                         children: [
+                          const SizedBox(
+                            height: 20,
+                          ),
                           Expanded(
                             child: Image.asset(
                               'assets/logo.png',
