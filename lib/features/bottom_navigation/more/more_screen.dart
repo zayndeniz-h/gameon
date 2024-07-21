@@ -4,7 +4,7 @@ import 'package:teen_patti/models/more_options.dart';
 import 'package:teen_patti/routes/routes.dart';
 
 class MoreScreen extends StatefulWidget {
-  const MoreScreen({Key? key}) : super(key: key);
+  const MoreScreen({super.key});
 
   @override
   State<MoreScreen> createState() => _MoreScreenState();

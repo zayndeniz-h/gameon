@@ -10,8 +10,7 @@ import 'verification_interactor.dart';
 class VerificationUI extends StatefulWidget {
   final VerificationInteractor verificationInteractor;
 
-  const VerificationUI(this.verificationInteractor, {Key? key})
-      : super(key: key);
+  const VerificationUI(this.verificationInteractor, {super.key});
 
   @override
   VerificationUIState createState() => VerificationUIState();

@@ -6,7 +6,7 @@ import 'package:teen_patti/routes/routes.dart';
 import 'package:teen_patti/utils/utils.dart';
 
 class LobbyScreen extends StatelessWidget {
-  const LobbyScreen({Key? key}) : super(key: key);
+  const LobbyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +135,7 @@ class LobbyScreen extends StatelessWidget {
 }
 
 class CashTablesTab extends StatelessWidget {
-  const CashTablesTab({Key? key}) : super(key: key);
+  const CashTablesTab({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -247,7 +247,7 @@ class CashTablesTab extends StatelessWidget {
 }
 
 class LeaderboardTab extends StatelessWidget {
-  const LeaderboardTab({Key? key}) : super(key: key);
+  const LeaderboardTab({super.key});
 
   @override
   Widget build(BuildContext context) {

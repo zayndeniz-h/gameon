@@ -6,7 +6,7 @@ import 'verification_ui.dart';
 class VerificationPage extends StatefulWidget {
   final VoidCallback onVerificationDone;
 
-  const VerificationPage(this.onVerificationDone, {Key? key}) : super(key: key);
+  const VerificationPage(this.onVerificationDone, {super.key});
 
   @override
   VerificationPageState createState() => VerificationPageState();

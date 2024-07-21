@@ -3,7 +3,7 @@ import 'package:teen_patti/Locale/locales.dart';
 import 'package:teen_patti/models/wallet_offers.dart';
 
 class OffersTab extends StatelessWidget {
-  const OffersTab({Key? key}) : super(key: key);
+  const OffersTab({super.key});
 
   @override
   Widget build(BuildContext context) {

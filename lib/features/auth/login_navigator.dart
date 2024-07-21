@@ -16,7 +16,7 @@ class LoginRoutes {
 }
 
 class LoginNavigator extends StatelessWidget {
-  const LoginNavigator({Key? key}) : super(key: key);
+  const LoginNavigator({super.key});
 
   @override
   Widget build(BuildContext context) {

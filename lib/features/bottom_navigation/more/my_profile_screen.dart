@@ -4,7 +4,7 @@ import 'package:teen_patti/components/entry_field.dart';
 import 'package:teen_patti/components/login_header.dart';
 
 class MyProfileScreen extends StatelessWidget {
-  const MyProfileScreen({Key? key}) : super(key: key);
+  const MyProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

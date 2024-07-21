@@ -10,14 +10,13 @@ class CustomButton extends StatelessWidget {
   final StackFit? fit;
 
   const CustomButton(
-      {Key? key,
+      {super.key,
       this.onTap,
       this.title,
       this.bgImage,
       this.style,
       this.bgWidget,
-      this.fit})
-      : super(key: key);
+      this.fit});
 
   @override
   Widget build(BuildContext context) {

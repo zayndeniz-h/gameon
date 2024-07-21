@@ -6,7 +6,7 @@ import 'package:teen_patti/components/custom_button.dart';
 import 'package:teen_patti/utils/utils.dart';
 
 class PokerRoomScreen extends StatefulWidget {
-  const PokerRoomScreen({Key? key}) : super(key: key);
+  const PokerRoomScreen({super.key});
 
   @override
   State<PokerRoomScreen> createState() => _PokerRoomScreenState();

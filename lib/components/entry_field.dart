@@ -8,13 +8,13 @@ class EntryField extends StatelessWidget {
   final TextStyle? style;
 
   const EntryField({
-    Key? key,
+    super.key,
     required this.title,
     required this.hintText,
     this.suffixIcon,
     this.initialValue,
     this.style,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

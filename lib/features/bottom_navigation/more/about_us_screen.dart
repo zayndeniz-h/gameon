@@ -3,7 +3,7 @@ import 'package:teen_patti/Locale/locales.dart';
 import 'package:teen_patti/components/login_header.dart';
 
 class AboutUsScreen extends StatelessWidget {
-  const AboutUsScreen({Key? key}) : super(key: key);
+  const AboutUsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:teen_patti/Locale/locales.dart';
 import 'package:teen_patti/components/login_header.dart';
 
 class FaqScreen extends StatefulWidget {
-  const FaqScreen({Key? key}) : super(key: key);
+  const FaqScreen({super.key});
 
   @override
   State<FaqScreen> createState() => _FaqScreenState();
@@ -63,7 +63,7 @@ class _FaqScreenState extends State<FaqScreen> {
 class FaqTile extends StatefulWidget {
   final String title;
 
-  const FaqTile({Key? key, required this.title}) : super(key: key);
+  const FaqTile({super.key, required this.title});
 
   @override
   State<FaqTile> createState() => _FaqTileState();

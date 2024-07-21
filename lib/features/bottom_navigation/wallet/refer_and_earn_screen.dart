@@ -4,7 +4,7 @@ import 'package:teen_patti/components/custom_button.dart';
 import 'package:teen_patti/components/entry_field.dart';
 
 class ReferAndEarnScreen extends StatelessWidget {
-  const ReferAndEarnScreen({Key? key}) : super(key: key);
+  const ReferAndEarnScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

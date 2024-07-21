@@ -6,7 +6,7 @@ import 'package:teen_patti/features/bottom_navigation/my_table/my_tables_screen.
 import 'package:teen_patti/features/bottom_navigation/wallet/wallet_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   BottomNavigationState createState() => BottomNavigationState();

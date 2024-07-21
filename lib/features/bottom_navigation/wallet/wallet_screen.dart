@@ -6,7 +6,7 @@ import 'package:teen_patti/features/bottom_navigation/wallet/views/offers_tab.da
 import 'package:teen_patti/routes/routes.dart';
 
 class WalletScreen extends StatelessWidget {
-  const WalletScreen({Key? key}) : super(key: key);
+  const WalletScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

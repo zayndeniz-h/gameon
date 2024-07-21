@@ -3,7 +3,7 @@ import 'package:teen_patti/Locale/locales.dart';
 import 'package:teen_patti/models/wallet_history.dart';
 
 class HistoryTab extends StatelessWidget {
-  HistoryTab({Key? key}) : super(key: key);
+  HistoryTab({super.key});
 
   final List<WalletHistory> transaction = [
     WalletHistory(TransactionType.pokerEntry, '-\$ 20.00'),

@@ -12,7 +12,7 @@ import 'package:teen_patti/routes/routes.dart';
 class LanguageSheet extends StatefulWidget {
   final bool fromRoot;
 
-  const LanguageSheet({Key? key, this.fromRoot = true}) : super(key: key);
+  const LanguageSheet({super.key, this.fromRoot = true});
 
   @override
   LanguageSheetState createState() => LanguageSheetState();

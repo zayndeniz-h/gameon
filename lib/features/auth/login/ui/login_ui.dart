@@ -9,7 +9,7 @@ import 'login_interactor.dart';
 class LoginUI extends StatefulWidget {
   final LoginInteractor loginInteractor;
 
-  const LoginUI(this.loginInteractor, {Key? key}) : super(key: key);
+  const LoginUI(this.loginInteractor, {super.key});
 
   @override
   LoginUIState createState() => LoginUIState();

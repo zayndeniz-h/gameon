@@ -4,7 +4,7 @@ import 'package:teen_patti/components/custom_button.dart';
 import 'package:teen_patti/routes/routes.dart';
 
 class MyTablesScreen extends StatelessWidget {
-  const MyTablesScreen({Key? key}) : super(key: key);
+  const MyTablesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

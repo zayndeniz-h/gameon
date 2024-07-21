@@ -4,8 +4,7 @@ class CircularIconButton extends StatelessWidget {
   final IconData icon;
   final Function()? onTap;
 
-  const CircularIconButton({Key? key, required this.icon, this.onTap})
-      : super(key: key);
+  const CircularIconButton({super.key, required this.icon, this.onTap});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:teen_patti/Locale/locales.dart';
 import 'package:teen_patti/components/login_header.dart';
 
 class PrivacyPolicyScreen extends StatelessWidget {
-  const PrivacyPolicyScreen({Key? key}) : super(key: key);
+  const PrivacyPolicyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

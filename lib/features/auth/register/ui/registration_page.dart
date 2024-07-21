@@ -7,7 +7,7 @@ import 'registration_ui.dart';
 class RegisterPage extends StatelessWidget {
   final String? phoneNumber;
 
-  const RegisterPage(this.phoneNumber, {Key? key}) : super(key: key);
+  const RegisterPage(this.phoneNumber, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class RegisterPage extends StatelessWidget {
 class RegistrationBody extends StatefulWidget {
   final String? phoneNumber;
 
-  const RegistrationBody(this.phoneNumber, {Key? key}) : super(key: key);
+  const RegistrationBody(this.phoneNumber, {super.key});
 
   @override
   RegistrationBodyState createState() => RegistrationBodyState();

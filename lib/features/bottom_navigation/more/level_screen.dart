@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:teen_patti/Locale/locales.dart';
 
 class LevelScreen extends StatelessWidget {
-  const LevelScreen({Key? key}) : super(key: key);
+  const LevelScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

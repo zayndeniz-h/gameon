@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class LoginHeader extends StatelessWidget {
   final String title;
   final String subtitle;
-  const LoginHeader({Key? key, required this.title, required this.subtitle})
-      : super(key: key);
+  const LoginHeader({super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
