@@ -32,8 +32,7 @@ class MyTablesScreen extends StatelessWidget {
           children: [
             ListView.separated(
               shrinkWrap: true,
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
               separatorBuilder: (context, index) {
                 return const SizedBox(
                   height: 6,
@@ -86,12 +85,8 @@ class MyTablesScreen extends StatelessWidget {
                                     ),
                                     Text(
                                       '10 ${locale.seats}',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleSmall
-                                          ?.copyWith(
-                                            color:
-                                                Theme.of(context).primaryColor,
+                                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                            color: Theme.of(context).primaryColor,
                                             fontSize: 13,
                                           ),
                                     ),
@@ -102,10 +97,7 @@ class MyTablesScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   '\$ 5.00 / \$ 10.00',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleSmall
-                                      ?.copyWith(
+                                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                         fontSize: 15,
                                         fontWeight: FontWeight.w700,
                                       ),
@@ -126,10 +118,7 @@ class MyTablesScreen extends StatelessWidget {
                                 ),
                                 Text(
                                   locale.goToTable,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                         fontSize: 14,
                                       ),
                                 ),

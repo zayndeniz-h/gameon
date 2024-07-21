@@ -12,8 +12,7 @@ class VerificationPage extends StatefulWidget {
   VerificationPageState createState() => VerificationPageState();
 }
 
-class VerificationPageState extends State<VerificationPage>
-    implements VerificationInteractor {
+class VerificationPageState extends State<VerificationPage> implements VerificationInteractor {
   @override
   Widget build(BuildContext context) {
     return VerificationUI(this);

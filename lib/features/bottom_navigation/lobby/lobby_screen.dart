@@ -47,8 +47,7 @@ class LobbyScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(
-                              context, PageRoutes.addCashScreen);
+                          Navigator.pushNamed(context, PageRoutes.addCashScreen);
                         },
                         child: Container(
                           padding: const EdgeInsetsDirectional.only(
@@ -62,9 +61,7 @@ class LobbyScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(50),
                             color: Theme.of(context).scaffoldBackgroundColor,
                             border: Border.all(
-                              color: Theme.of(context)
-                                  .primaryColor
-                                  .withOpacity(0.5),
+                              color: Theme.of(context).primaryColor.withOpacity(0.5),
                             ),
                           ),
                           child: Row(
@@ -194,10 +191,7 @@ class CashTablesTab extends StatelessWidget {
                             ),
                             Text(
                               '${15 * (index + 1)} ${locale.playersOnline}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                     color: Theme.of(context).primaryColor,
                                     fontSize: 13,
                                   ),
@@ -209,11 +203,10 @@ class CashTablesTab extends StatelessWidget {
                         ),
                         Text(
                           '\$ 5.00 / \$ 10.00',
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                              ),
                         ),
                         const SizedBox(
                           height: 16,
@@ -275,8 +268,7 @@ class LeaderboardTab extends StatelessWidget {
           child: Container(
             color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.9),
             child: ListView.separated(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0),
               itemBuilder: (context, index) {
                 return Row(
                   children: [
@@ -294,10 +286,7 @@ class LeaderboardTab extends StatelessWidget {
                         children: [
                           Text(
                             'Panthor2234',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(
+                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                   color: Theme.of(context).primaryColor,
                                 ),
                           ),

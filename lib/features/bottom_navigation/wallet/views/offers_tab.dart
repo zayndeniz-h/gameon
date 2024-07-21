@@ -33,8 +33,7 @@ class OffersTab extends StatelessWidget {
     );
   }
 
-  Container buildOffersItem(
-      BuildContext context, String title, String subtitle, String amount) {
+  Container buildOffersItem(BuildContext context, String title, String subtitle, String amount) {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 12,

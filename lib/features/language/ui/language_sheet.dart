@@ -68,8 +68,7 @@ class LanguageSheetState extends State<LanguageSheet> {
                     physics: const BouncingScrollPhysics(),
                     itemCount: AppConfig.languagesSupported.length,
                     itemBuilder: (context, index) {
-                      var langCode =
-                          AppConfig.languagesSupported.keys.elementAt(index);
+                      var langCode = AppConfig.languagesSupported.keys.elementAt(index);
                       return Container(
                         // padding: const EdgeInsets.symmetric(vertical: 4),
                         decoration: BoxDecoration(
@@ -96,8 +95,7 @@ class LanguageSheetState extends State<LanguageSheet> {
                             });
                           },
                           activeColor: theme.primaryColor,
-                          fillColor:
-                              MaterialStateProperty.all(theme.primaryColor),
+                          fillColor: MaterialStateProperty.all(theme.primaryColor),
                         ),
                       );
                     },

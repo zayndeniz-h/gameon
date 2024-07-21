@@ -26,8 +26,7 @@ class CircularIconButton extends StatelessWidget {
     );
   }
 
-  static BoxDecoration getDecoration(
-      BuildContext context, Color backgroundColor) {
+  static BoxDecoration getDecoration(BuildContext context, Color backgroundColor) {
     return BoxDecoration(
       borderRadius: BorderRadius.circular(50),
       color: backgroundColor,

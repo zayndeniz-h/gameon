@@ -11,8 +11,7 @@ class RegistrationUI extends StatefulWidget {
   final RegistrationInteractor registrationInteractor;
   final String? phoneNumber;
 
-  const RegistrationUI(this.registrationInteractor, this.phoneNumber,
-      {super.key});
+  const RegistrationUI(this.registrationInteractor, this.phoneNumber, {super.key});
 
   @override
   RegistrationUIState createState() => RegistrationUIState();

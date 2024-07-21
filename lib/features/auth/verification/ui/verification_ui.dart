@@ -43,10 +43,7 @@ class VerificationUIState extends State<VerificationUI> {
                 children: [
                   Text(
                     locale.weveSentSixDigitCode,
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleSmall
-                        ?.copyWith(fontSize: 15),
+                    style: Theme.of(context).textTheme.titleSmall?.copyWith(fontSize: 15),
                   ),
                   const SizedBox(
                     height: 30,

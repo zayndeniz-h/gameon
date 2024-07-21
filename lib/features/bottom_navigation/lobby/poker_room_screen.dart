@@ -210,8 +210,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                         child: Image.asset(
                           'assets/logo.png',
                           width: 100,
-                          color:
-                              Theme.of(context).highlightColor.withOpacity(0.3),
+                          color: Theme.of(context).highlightColor.withOpacity(0.3),
                         ),
                       ),
                       Column(
@@ -219,10 +218,9 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                         children: [
                           Text(
                             locale.potAmt,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: Theme.of(context).highlightColor,
-                                    ),
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  color: Theme.of(context).highlightColor,
+                                ),
                           ),
                           const SizedBox(
                             height: 12,
@@ -231,9 +229,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                             padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(16),
-                              color: Theme.of(context)
-                                  .scaffoldBackgroundColor
-                                  .withOpacity(0.6),
+                              color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
                             ),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
@@ -247,10 +243,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                                 ),
                                 Text(
                                   '\$ 10000',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall
-                                      ?.copyWith(
+                                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
                                         color: Theme.of(context).highlightColor,
                                       ),
                                 ),
@@ -487,8 +480,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                   const SizedBox(
                     height: 24,
                   ),
-                  buildTableInfoTile(
-                      context, locale.tableName, '${locale.hand} #2254210'),
+                  buildTableInfoTile(context, locale.tableName, '${locale.hand} #2254210'),
                   const SizedBox(
                     height: 30,
                   ),
@@ -496,13 +488,11 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  buildTableInfoTile(
-                      context, locale.minMaxBuyIn, '\$ 50.00 / \$ 100.00'),
+                  buildTableInfoTile(context, locale.minMaxBuyIn, '\$ 50.00 / \$ 100.00'),
                   const SizedBox(
                     height: 30,
                   ),
-                  buildTableInfoTile(
-                      context, locale.stakesSmallBig, '\$ 50.00 / \$ 100.00'),
+                  buildTableInfoTile(context, locale.stakesSmallBig, '\$ 50.00 / \$ 100.00'),
                   const SizedBox(
                     height: 40,
                   ),
@@ -607,28 +597,21 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                         Expanded(
                           child: Text(
                             '${locale.min}.',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(
+                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                   fontSize: 10,
                                 ),
                           ),
                         ),
                         Text(
                           locale.buyInAmount,
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontSize: 10,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontSize: 10,
+                              ),
                         ),
                         Expanded(
                           child: Text(
                             '${locale.max}.',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall
-                                ?.copyWith(
+                            style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                   fontSize: 10,
                                 ),
                             textAlign: TextAlign.end,
@@ -650,20 +633,18 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
                       children: [
                         Text(
                           '\$5',
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 16,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                              ),
                         ),
                         const Spacer(),
                         Text(
                           '\$10',
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 16,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 16,
+                              ),
                         ),
                       ],
                     ),
@@ -849,8 +830,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
     );
   }
 
-  Widget buildTableInfoTile(
-      BuildContext context, String title, String subtitle) {
+  Widget buildTableInfoTile(BuildContext context, String title, String subtitle) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
@@ -876,8 +856,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
     );
   }
 
-  Expanded buildBlackButton(BuildContext context, String title,
-      {Function()? onTap}) {
+  Expanded buildBlackButton(BuildContext context, String title, {Function()? onTap}) {
     return Expanded(
       child: Stack(
         alignment: Alignment.center,
@@ -894,8 +873,7 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
     );
   }
 
-  Widget buildPlayerIcon(BuildContext context, String name,
-      {bool? cardsDisplayed}) {
+  Widget buildPlayerIcon(BuildContext context, String name, {bool? cardsDisplayed}) {
     return Column(
       children: [
         Text(
@@ -910,8 +888,8 @@ class _PokerRoomScreenState extends State<PokerRoomScreen> {
           children: [
             Container(
               height: 50,
-              margin: EdgeInsets.symmetric(
-                  horizontal: (cardsDisplayed ?? false) ? 48 : 8, vertical: 8),
+              margin:
+                  EdgeInsets.symmetric(horizontal: (cardsDisplayed ?? false) ? 48 : 8, vertical: 8),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 border: Border.all(

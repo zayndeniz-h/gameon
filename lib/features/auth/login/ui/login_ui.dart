@@ -71,11 +71,10 @@ class LoginUIState extends State<LoginUI> {
                         const Spacer(),
                         Text(
                           locale.letsPlay,
-                          style:
-                              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                    fontWeight: FontWeight.w500,
-                                    fontSize: 16,
-                                  ),
+                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                              ),
                         ),
                         const Spacer(),
                         Padding(
@@ -92,8 +91,7 @@ class LoginUIState extends State<LoginUI> {
                           padding: const EdgeInsets.symmetric(horizontal: 20.0),
                           child: CustomButton(
                             onTap: () {
-                              widget.loginInteractor
-                                  .loginWithMobile('isoCode', 'mobileNumber');
+                              widget.loginInteractor.loginWithMobile('isoCode', 'mobileNumber');
                             },
                           ),
                         ),

@@ -74,8 +74,7 @@ Map<String, String> indonesian() {
         "Jika Anda bergabung dan kehilangan kontes, Anda akan mendapatkan 1.0x poin.",
     "losePoints": "yaitu kehilangan 300 poin x1.0 = 300 poin",
     "leaderboard": "Papan peringkat",
-    "knowWhereYouStandInCompetition":
-        "Ketahui Di Mana Anda Berdiri dalam Kompetisi",
+    "knowWhereYouStandInCompetition": "Ketahui Di Mana Anda Berdiri dalam Kompetisi",
     "aboutUs": "Tentang kami",
     "whoWeAreAndStarted": "Siapa kami & bagaimana kami memulai",
     "referNEarn": "Rujuk & Hasilkan",

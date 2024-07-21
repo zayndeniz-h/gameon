@@ -88,8 +88,7 @@ class LevelScreen extends StatelessWidget {
                     children: [
                       LinearProgressIndicator(
                         color: Theme.of(context).primaryColorLight,
-                        backgroundColor:
-                            Theme.of(context).highlightColor.withOpacity(0.1),
+                        backgroundColor: Theme.of(context).highlightColor.withOpacity(0.1),
                         value: 0.7,
                         minHeight: 6,
                       ),
@@ -125,9 +124,7 @@ class LevelScreen extends StatelessWidget {
                             padding: const EdgeInsets.all(1.0),
                             child: Icon(
                               Icons.circle,
-                              color: Theme.of(context)
-                                  .highlightColor
-                                  .withOpacity(0.3),
+                              color: Theme.of(context).highlightColor.withOpacity(0.3),
                             ),
                           ),
                           const Spacer(
@@ -148,9 +145,7 @@ class LevelScreen extends StatelessWidget {
                       Text(
                         '8800 ${locale.points}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: Theme.of(context)
-                                  .highlightColor
-                                  .withOpacity(0.5),
+                              color: Theme.of(context).highlightColor.withOpacity(0.5),
                             ),
                       ),
                       const Spacer(
@@ -159,9 +154,7 @@ class LevelScreen extends StatelessWidget {
                       Text(
                         '8800 ${locale.points}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: Theme.of(context)
-                                  .highlightColor
-                                  .withOpacity(0.5),
+                              color: Theme.of(context).highlightColor.withOpacity(0.5),
                             ),
                       ),
                       const Spacer(
@@ -170,9 +163,7 @@ class LevelScreen extends StatelessWidget {
                       Text(
                         '8800 ${locale.points}',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: Theme.of(context)
-                                  .highlightColor
-                                  .withOpacity(0.5),
+                              color: Theme.of(context).highlightColor.withOpacity(0.5),
                             ),
                       ),
                       const Spacer(
@@ -194,10 +185,7 @@ class LevelScreen extends StatelessWidget {
                     ),
                     child: Text(
                       locale.earnPointsToReach,
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleSmall
-                          ?.copyWith(fontSize: 10),
+                      style: Theme.of(context).textTheme.titleSmall?.copyWith(fontSize: 10),
                     ),
                   ),
                   const SizedBox(

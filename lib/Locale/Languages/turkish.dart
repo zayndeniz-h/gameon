@@ -66,11 +66,9 @@ Map<String, String> turkish() {
     "howItWorks": "Nasıl çalışır?",
     "youllGetPoints": "Katıldığınız her ücretli maçta 10 puan alacaksınız.",
     "joinedMatch": "yani 2 maç = 20 puan katıldı",
-    "ifYouJoinedAndWon":
-        "Yarışmaya katıldıysanız ve kazandıysanız 1.5 kat puan alacaksınız.",
+    "ifYouJoinedAndWon": "Yarışmaya katıldıysanız ve kazandıysanız 1.5 kat puan alacaksınız.",
     "earnedPoints": "yani 300 puan kazandı x1.5 = 450 puan",
-    "ifYouJoinedAndLose":
-        "Katıldığınız ve yarışmaya kaybettiyseniz, 1.0x puan alırsınız.",
+    "ifYouJoinedAndLose": "Katıldığınız ve yarışmaya kaybettiyseniz, 1.0x puan alırsınız.",
     "losePoints": "yani 300 puan kaybetmek x1.0 = 300 puan",
     "leaderboard": "Liderler Sıralaması",
     "knowWhereYouStandInCompetition": "Rekabette nerede durduğunuzu bilin",
@@ -109,8 +107,7 @@ Map<String, String> turkish() {
     "moneyAdded": "Para eklendi",
     "moneyWithdrawal": "Para Çekme",
     "offer1": "% 50 addon nakit geri dönüş",
-    "offer1Subtitle":
-        "50 \$ ve daha fazlasını ekleyin ve% 50 ekstra nakit para elde edin",
+    "offer1Subtitle": "50 \$ ve daha fazlasını ekleyin ve% 50 ekstra nakit para elde edin",
     "offer2": "Hoş Geldiniz Bonus",
     "offer2Subtitle": "İlk oyununuzu ücretsiz girişle başlatın",
     "offer3": "Her 3. kayıp getirisi",

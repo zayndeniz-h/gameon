@@ -6,8 +6,7 @@ class LocalDataSource {
     _initPref();
   }
 
-  static final LocalDataSource _instance =
-      LocalDataSource._privateConstructor();
+  static final LocalDataSource _instance = LocalDataSource._privateConstructor();
 
   factory LocalDataSource() {
     return _instance;

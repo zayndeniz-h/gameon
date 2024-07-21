@@ -62,11 +62,9 @@ Map<String, String> romanian() {
     "faqs": "Întrebări frecvente",
     "getYourAnswers": "Obțineți răspunsurile",
     "youAreOnLevel": "Ești la nivel",
-    "earnPointsToReach":
-        "Câștigă încă 129 de puncte pentru a atinge nivelul 90",
+    "earnPointsToReach": "Câștigă încă 129 de puncte pentru a atinge nivelul 90",
     "howItWorks": "Cum functioneaza?",
-    "youllGetPoints":
-        "Veți primi 10 puncte pentru fiecare meci plătit la care v -ați alăturat.",
+    "youllGetPoints": "Veți primi 10 puncte pentru fiecare meci plătit la care v -ați alăturat.",
     "joinedMatch": "adică s -a alăturat 2 meciuri = 20 de puncte",
     "ifYouJoinedAndWon":
         "Dacă v -ați alăturat și ați câștigat concursul, veți primi 1,5x de puncte.",
@@ -83,8 +81,7 @@ Map<String, String> romanian() {
     "support": "A sustine",
     "connectUsForIssue": "Conectați -ne pentru problemă",
     "privacyPolicy": "Politica de confidențialitate",
-    "knowOurPrivacyPolicies":
-        "Cunoașteți politicile noastre de confidențialitate",
+    "knowOurPrivacyPolicies": "Cunoașteți politicile noastre de confidențialitate",
     "changeLanguage": "Schimbați limbajul",
     "setYourPreferredLanguage": "Setați -vă limba preferată",
     "getYourQuestionsAnswered": "Obțineți răspunsul la întrebarea dvs.",

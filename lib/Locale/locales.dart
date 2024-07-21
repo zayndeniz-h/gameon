@@ -100,8 +100,7 @@ class AppLocalizations {
   }
 
   String get wellSendVerificationCode {
-    return _localizedValues[locale.languageCode]!['wellSendVerificationCode'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['wellSendVerificationCode'] ?? '';
   }
 
   String get verification {
@@ -209,8 +208,7 @@ class AppLocalizations {
   }
 
   String get tableShowWhenYourTurn {
-    return _localizedValues[locale.languageCode]!['tableShowWhenYourTurn'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['tableShowWhenYourTurn'] ?? '';
   }
 
   String get wait {
@@ -258,9 +256,7 @@ class AppLocalizations {
   }
 
   String get howToChangeProfilePicture {
-    return _localizedValues[locale.languageCode]![
-            'howToChangeProfilePicture'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['howToChangeProfilePicture'] ?? '';
   }
 
   String get howToSendMoney {
@@ -328,9 +324,7 @@ class AppLocalizations {
   }
 
   String get knowWhereYouStandInCompetition {
-    return _localizedValues[locale.languageCode]![
-            'knowWhereYouStandInCompetition'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['knowWhereYouStandInCompetition'] ?? '';
   }
 
   String get aboutUs {
@@ -346,9 +340,7 @@ class AppLocalizations {
   }
 
   String get referYourFriendsAndFamily {
-    return _localizedValues[locale.languageCode]![
-            'referYourFriendsAndFamily'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['referYourFriendsAndFamily'] ?? '';
   }
 
   String get support {
@@ -364,8 +356,7 @@ class AppLocalizations {
   }
 
   String get knowOurPrivacyPolicies {
-    return _localizedValues[locale.languageCode]!['knowOurPrivacyPolicies'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['knowOurPrivacyPolicies'] ?? '';
   }
 
   String get changeLanguage {
@@ -373,13 +364,11 @@ class AppLocalizations {
   }
 
   String get setYourPreferredLanguage {
-    return _localizedValues[locale.languageCode]!['setYourPreferredLanguage'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['setYourPreferredLanguage'] ?? '';
   }
 
   String get getYourQuestionsAnswered {
-    return _localizedValues[locale.languageCode]!['getYourQuestionsAnswered'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['getYourQuestionsAnswered'] ?? '';
   }
 
   String get myProfile {
@@ -527,8 +516,7 @@ class AppLocalizations {
   }
 
   String get topUpYourWalletBalance {
-    return _localizedValues[locale.languageCode]!['topUpYourWalletBalance'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['topUpYourWalletBalance'] ?? '';
   }
 
   String get enterAmountToAdd {
@@ -552,8 +540,7 @@ class AppLocalizations {
   }
 
   String get alreadyHaveACouponCode {
-    return _localizedValues[locale.languageCode]!['alreadyHaveACouponCode'] ??
-        '';
+    return _localizedValues[locale.languageCode]!['alreadyHaveACouponCode'] ?? '';
   }
 
   String get applyCouponCode {

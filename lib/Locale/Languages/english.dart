@@ -66,11 +66,9 @@ Map<String, String> english() {
     "howItWorks": "How it works?",
     "youllGetPoints": "You’ll get 10 points on every paid match you joined.",
     "joinedMatch": "i.e joined 2 match = 20 points",
-    "ifYouJoinedAndWon":
-        "If you joined and won the contest you’ll get 1.5x of points.",
+    "ifYouJoinedAndWon": "If you joined and won the contest you’ll get 1.5x of points.",
     "earnedPoints": "i.e Earned 300 points x1.5 = 450 points",
-    "ifYouJoinedAndLose":
-        "If you joined and lose the contest you’ll get 1.0x of points.",
+    "ifYouJoinedAndLose": "If you joined and lose the contest you’ll get 1.0x of points.",
     "losePoints": "i.e Lose 300 points x1.0 = 300 points",
     "leaderboard": "Leaderboard",
     "knowWhereYouStandInCompetition": "Know where you stand in competition",

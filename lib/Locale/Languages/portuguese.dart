@@ -64,14 +64,11 @@ Map<String, String> portuguese() {
     "youAreOnLevel": "Você está em nível",
     "earnPointsToReach": "Ganhe mais 129 pontos para atingir o nível 90",
     "howItWorks": "Como funciona?",
-    "youllGetPoints":
-        "Você receberá 10 pontos em todas as partidas pagas que você ingressou.",
+    "youllGetPoints": "Você receberá 10 pontos em todas as partidas pagas que você ingressou.",
     "joinedMatch": "ou seja, juntou 2 partidas = 20 pontos",
-    "ifYouJoinedAndWon":
-        "Se você ingressou e venceu o concurso, receberá 1,5x de pontos.",
+    "ifYouJoinedAndWon": "Se você ingressou e venceu o concurso, receberá 1,5x de pontos.",
     "earnedPoints": "ou seja, ganhou 300 pontos x1.5 = 450 pontos",
-    "ifYouJoinedAndLose":
-        "Se você ingressou e perder o concurso, receberá 1,0x de pontos.",
+    "ifYouJoinedAndLose": "Se você ingressou e perder o concurso, receberá 1,0x de pontos.",
     "losePoints": "ou seja, perder 300 pontos x1.0 = 300 pontos",
     "leaderboard": "Entre os melhores",
     "knowWhereYouStandInCompetition": "Saiba onde você está em competição",
@@ -110,18 +107,15 @@ Map<String, String> portuguese() {
     "moneyAdded": "Dinheiro adicionado",
     "moneyWithdrawal": "Retirada de dinheiro",
     "offer1": "Reembolso de 50% addon",
-    "offer1Subtitle":
-        "Adicione US \$ 50 e mais e obtenha 50% de reembolso extra",
+    "offer1Subtitle": "Adicione US \$ 50 e mais e obtenha 50% de reembolso extra",
     "offer2": "Bônus de boas -vindas",
     "offer2Subtitle": "Comece seu primeiro jogo com entrada gratuita",
     "offer3": "Cada 3ª perda de retorno",
     "offer3Subtitle": "Cada 3ª perda de retorno",
     "offer4": "Reembolso plano de 30%",
-    "offer4Subtitle":
-        "Adicione US \$ 30 em carteira e obtenha 30% de reembolso",
+    "offer4Subtitle": "Adicione US \$ 30 em carteira e obtenha 30% de reembolso",
     "offer5": "Até 10% de reembolso",
-    "offer5Subtitle":
-        "Adicione US \$ 30 em carteira e obtenha 30% de reembolso",
+    "offer5Subtitle": "Adicione US \$ 30 em carteira e obtenha 30% de reembolso",
     "apply": "Aplicar",
     "walletBalance": "Balanço da carteira",
     "topUpYourWalletBalance": "Abaixe o equilíbrio da sua carteira",

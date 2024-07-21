@@ -17,8 +17,7 @@ Map<String, String> french() {
     "selectBirthdate": "Sélectionnez la date de naissance",
     "wellSendVerificationCode": "Nous enverrons le code de vérification.",
     "verification": "Vérification",
-    "weveSentSixDigitCode":
-        "Nous avons envoyé un code de vérification à 6 chiffres.",
+    "weveSentSixDigitCode": "Nous avons envoyé un code de vérification à 6 chiffres.",
     "enterCode": "Entrez le code",
     "enterSixDigitCode": "Entrez le code à 6 chiffres",
     "cashTables": "Tables de trésorerie",
@@ -63,11 +62,9 @@ Map<String, String> french() {
     "faqs": "FAQ",
     "getYourAnswers": "Obtenez vos réponses",
     "youAreOnLevel": "Tu es au niveau",
-    "earnPointsToReach":
-        "Gagnez 129 points de plus pour atteindre le niveau 90",
+    "earnPointsToReach": "Gagnez 129 points de plus pour atteindre le niveau 90",
     "howItWorks": "Comment ça fonctionne?",
-    "youllGetPoints":
-        "Vous obtiendrez 10 points sur chaque match rémunéré que vous avez rejoint.",
+    "youllGetPoints": "Vous obtiendrez 10 points sur chaque match rémunéré que vous avez rejoint.",
     "joinedMatch": "c'est-à-dire 2 matchs = 20 points",
     "ifYouJoinedAndWon":
         "Si vous avez rejoint et remporté le concours, vous obtiendrez 1,5x de points.",
@@ -112,18 +109,15 @@ Map<String, String> french() {
     "moneyAdded": "Argent ajouté",
     "moneyWithdrawal": "Retrait d'argent",
     "offer1": "50% de cash-back",
-    "offer1Subtitle":
-        "Ajouter 50 \$ et plus et obtenir 50% de cashback supplémentaire",
+    "offer1Subtitle": "Ajouter 50 \$ et plus et obtenir 50% de cashback supplémentaire",
     "offer2": "Bonus de bienvenue",
     "offer2Subtitle": "Commencez votre premier jeu avec une entrée gratuite",
     "offer3": "Tous les 3ème pertes renvoient",
     "offer3Subtitle": "Tous les 3ème pertes renvoient",
     "offer4": "Cashback à 30% plat",
-    "offer4Subtitle":
-        "Ajouter 30 \$ en portefeuille et obtenir 30% de cashback",
+    "offer4Subtitle": "Ajouter 30 \$ en portefeuille et obtenir 30% de cashback",
     "offer5": "Jusqu'à 10% de cashback",
-    "offer5Subtitle":
-        "Ajouter 30 \$ en portefeuille et obtenir 30% de cashback",
+    "offer5Subtitle": "Ajouter 30 \$ en portefeuille et obtenir 30% de cashback",
     "apply": "Appliquer",
     "walletBalance": "Équilibre du portefeuille",
     "topUpYourWalletBalance": "Complétez votre équilibre de portefeuille",

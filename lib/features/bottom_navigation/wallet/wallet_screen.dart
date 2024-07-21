@@ -50,10 +50,7 @@ class WalletScreen extends StatelessWidget {
                     children: [
                       Text(
                         locale.walletBalance,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodySmall
-                            ?.copyWith(fontSize: 14),
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 14),
                       ),
                       const SizedBox(
                         height: 8,
@@ -158,8 +155,7 @@ class WalletScreen extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.only(top: 4),
                 decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/bg.png'), fit: BoxFit.cover),
+                  image: DecorationImage(image: AssetImage('assets/bg.png'), fit: BoxFit.cover),
                 ),
                 child: Column(
                   children: [
@@ -167,11 +163,10 @@ class WalletScreen extends StatelessWidget {
                       indicatorSize: TabBarIndicatorSize.label,
                       indicatorColor: Theme.of(context).primaryColor,
                       labelColor: Theme.of(context).primaryColor,
-                      labelStyle:
-                          Theme.of(context).textTheme.titleSmall?.copyWith(
-                                letterSpacing: 3,
-                                fontWeight: FontWeight.w700,
-                              ),
+                      labelStyle: Theme.of(context).textTheme.titleSmall?.copyWith(
+                            letterSpacing: 3,
+                            fontWeight: FontWeight.w700,
+                          ),
                       tabs: [
                         Tab(
                           text: locale.history.toUpperCase(),
@@ -226,10 +221,7 @@ class WalletScreen extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(fontSize: 14),
+                style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 14),
               ),
               const SizedBox(
                 height: 10,

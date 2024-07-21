@@ -55,20 +55,14 @@ class AddCashScreen extends StatelessWidget {
                           children: [
                             Text(
                               locale.walletBalance,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall
-                                  ?.copyWith(fontSize: 14),
+                              style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 14),
                             ),
                             const SizedBox(
                               height: 8,
                             ),
                             Text(
                               '\$ 50.00',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                                     fontSize: 20,
                                     fontWeight: FontWeight.w700,
                                   ),
@@ -180,8 +174,7 @@ class AddCashScreen extends StatelessWidget {
     );
   }
 
-  Container buildOffersItem(
-      BuildContext context, String title, String subtitle) {
+  Container buildOffersItem(BuildContext context, String title, String subtitle) {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 12,

@@ -83,8 +83,7 @@ class _MoreScreenState extends State<MoreScreen> {
             height: 40,
           ),
           GestureDetector(
-            onTap: () =>
-                Navigator.pushNamed(context, PageRoutes.myProfileScreen),
+            onTap: () => Navigator.pushNamed(context, PageRoutes.myProfileScreen),
             child: Container(
               color: Colors.transparent,
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -111,20 +110,18 @@ class _MoreScreenState extends State<MoreScreen> {
                       children: [
                         Text(
                           'Samanthateam123',
-                          style:
-                              Theme.of(context).textTheme.titleSmall?.copyWith(
-                                    fontSize: 15,
-                                  ),
+                          style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                                fontSize: 15,
+                              ),
                         ),
                         const SizedBox(
                           height: 8,
                         ),
                         Text(
                           'Samantha Smith',
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    fontSize: 15,
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                fontSize: 15,
+                              ),
                         ),
                       ],
                     ),
@@ -169,20 +166,14 @@ class _MoreScreenState extends State<MoreScreen> {
                             Expanded(
                               child: Text(
                                 '${locale.level} 89',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
-                                    ?.copyWith(
+                                style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       fontSize: 15,
                                     ),
                               ),
                             ),
                             Text(
                               '8,871 ${locale.points}',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .titleSmall
-                                  ?.copyWith(
+                              style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                     fontSize: 15,
                                   ),
                             ),
@@ -194,22 +185,18 @@ class _MoreScreenState extends State<MoreScreen> {
                         LinearProgressIndicator(
                           value: 0.4,
                           color: Theme.of(context).primaryColor,
-                          backgroundColor:
-                              Theme.of(context).highlightColor.withOpacity(0.1),
+                          backgroundColor: Theme.of(context).highlightColor.withOpacity(0.1),
                         ),
                         const SizedBox(
                           height: 10,
                         ),
                         Text(
                           locale.earnPointsToReach,
-                          style:
-                              Theme.of(context).textTheme.bodySmall?.copyWith(
-                                    color: Theme.of(context)
-                                        .highlightColor
-                                        .withOpacity(
-                                          0.4,
-                                        ),
-                                  ),
+                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                color: Theme.of(context).highlightColor.withOpacity(
+                                      0.4,
+                                    ),
+                              ),
                         ),
                       ],
                     ),
@@ -249,10 +236,7 @@ class _MoreScreenState extends State<MoreScreen> {
                             children: [
                               Text(
                                 moreOptions[index].title,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall
-                                    ?.copyWith(
+                                style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                       fontSize: 15,
                                     ),
                               ),
@@ -261,13 +245,8 @@ class _MoreScreenState extends State<MoreScreen> {
                               ),
                               Text(
                                 moreOptions[index].subtitle,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall
-                                    ?.copyWith(
-                                      color: Theme.of(context)
-                                          .highlightColor
-                                          .withOpacity(
+                                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Theme.of(context).highlightColor.withOpacity(
                                             0.4,
                                           ),
                                     ),

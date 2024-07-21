@@ -64,14 +64,11 @@ Map<String, String> swahili() {
     "youAreOnLevel": "Uko kwenye kiwango",
     "earnPointsToReach": "Pata alama 129 zaidi kufikia kiwango cha 90",
     "howItWorks": "Inavyofanya kazi?",
-    "youllGetPoints":
-        "Utapata alama 10 kwenye kila mechi iliyolipwa uliyojiunga.",
+    "youllGetPoints": "Utapata alama 10 kwenye kila mechi iliyolipwa uliyojiunga.",
     "joinedMatch": "i.e alijiunga na mechi 2 = alama 20",
-    "ifYouJoinedAndWon":
-        "Ikiwa ulijiunga na kushinda mashindano utapata alama 1.5x.",
+    "ifYouJoinedAndWon": "Ikiwa ulijiunga na kushinda mashindano utapata alama 1.5x.",
     "earnedPoints": "i.e ilipata alama 300 x1.5 = alama 450",
-    "ifYouJoinedAndLose":
-        "Ikiwa ulijiunga na kupoteza mashindano utapata alama 1.0x.",
+    "ifYouJoinedAndLose": "Ikiwa ulijiunga na kupoteza mashindano utapata alama 1.0x.",
     "losePoints": "i.e kupoteza alama 300 x1.0 = alama 300",
     "leaderboard": "Ubao wa kiongozi",
     "knowWhereYouStandInCompetition": "Jua ni wapi unasimama katika mashindano",

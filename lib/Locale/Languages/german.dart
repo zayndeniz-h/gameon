@@ -17,8 +17,7 @@ Map<String, String> german() {
     "selectBirthdate": "Wählen Sie Birthdate",
     "wellSendVerificationCode": "Wir senden den Verifizierungscode.",
     "verification": "Überprüfung",
-    "weveSentSixDigitCode":
-        "Wir haben einen 6 -stelligen Verifizierungscode gesendet.",
+    "weveSentSixDigitCode": "Wir haben einen 6 -stelligen Verifizierungscode gesendet.",
     "enterCode": "Code eingeben",
     "enterSixDigitCode": "Geben Sie einen 6 -stelligen Code ein",
     "cashTables": "Geldtische",
@@ -63,11 +62,9 @@ Map<String, String> german() {
     "faqs": "FAQs",
     "getYourAnswers": "Holen Sie sich Ihre Antworten",
     "youAreOnLevel": "Du bist auf dem Niveau",
-    "earnPointsToReach":
-        "Verdienen Sie 129 weitere Punkte, um Level 90 zu erreichen",
+    "earnPointsToReach": "Verdienen Sie 129 weitere Punkte, um Level 90 zu erreichen",
     "howItWorks": "Wie es funktioniert?",
-    "youllGetPoints":
-        "Sie erhalten 10 Punkte bei jedem bezahlten Spiel, das Sie beigetreten sind.",
+    "youllGetPoints": "Sie erhalten 10 Punkte bei jedem bezahlten Spiel, das Sie beigetreten sind.",
     "joinedMatch": "d.h. hat 2 Match = 20 Punkte beigetragen",
     "ifYouJoinedAndWon":
         "Wenn Sie beigetreten sind und den Wettbewerb gewonnen haben, erhalten Sie 1,5x Punkte.",
@@ -112,18 +109,15 @@ Map<String, String> german() {
     "moneyAdded": "Geld hinzugefügt",
     "moneyWithdrawal": "Geldauszahlung",
     "offer1": "50% Addon Cashback",
-    "offer1Subtitle":
-        "Fügen Sie 50 US -Dollar und mehr hinzu und erhalten Sie 50% mehr Cashback",
+    "offer1Subtitle": "Fügen Sie 50 US -Dollar und mehr hinzu und erhalten Sie 50% mehr Cashback",
     "offer2": "Willkommen Bonus",
     "offer2Subtitle": "Starten Sie Ihr erstes Spiel mit freiem Eintrag",
     "offer3": "Jeder 3. Verlustrückgang",
     "offer3Subtitle": "Jeder 3. Verlustrückgang",
     "offer4": "Flach 30% Cashback",
-    "offer4Subtitle":
-        "Fügen Sie 30 US -Dollar in Brieftasche hinzu und erhalten Sie 30% Cashback",
+    "offer4Subtitle": "Fügen Sie 30 US -Dollar in Brieftasche hinzu und erhalten Sie 30% Cashback",
     "offer5": "Bis zu 10% Cashback",
-    "offer5Subtitle":
-        "Fügen Sie 30 US -Dollar in Brieftasche hinzu und erhalten Sie 30% Cashback",
+    "offer5Subtitle": "Fügen Sie 30 US -Dollar in Brieftasche hinzu und erhalten Sie 30% Cashback",
     "apply": "Anwenden",
     "walletBalance": "Brieftaschenbalance",
     "topUpYourWalletBalance": "Geben Sie Ihre Brieftaschenbalance auf",

@@ -24,8 +24,7 @@ class RegistrationBody extends StatefulWidget {
   RegistrationBodyState createState() => RegistrationBodyState();
 }
 
-class RegistrationBodyState extends State<RegistrationBody>
-    implements RegistrationInteractor {
+class RegistrationBodyState extends State<RegistrationBody> implements RegistrationInteractor {
   @override
   Widget build(BuildContext context) {
     return RegistrationUI(this, widget.phoneNumber);

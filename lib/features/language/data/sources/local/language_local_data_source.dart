@@ -6,8 +6,7 @@ class LanguageLocalDataSource {
     _initPref();
   }
 
-  static final LanguageLocalDataSource _instance =
-      LanguageLocalDataSource._privateConstructor();
+  static final LanguageLocalDataSource _instance = LanguageLocalDataSource._privateConstructor();
 
   factory LanguageLocalDataSource() {
     return _instance;
@@ -22,8 +21,7 @@ class LanguageLocalDataSource {
 
   Future<String> getCurrentLanguage() async {
     await _initPref();
-    return _sharedPreferences!.getString(_currentLanguageKey) ??
-        AppConfig.languageDefault;
+    return _sharedPreferences!.getString(_currentLanguageKey) ?? AppConfig.languageDefault;
   }
 
   Future<void> setCurrentLanguage(String langCode) async {

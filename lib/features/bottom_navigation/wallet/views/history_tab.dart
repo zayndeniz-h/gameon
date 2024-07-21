@@ -37,8 +37,8 @@ class HistoryTab extends StatelessWidget {
     );
   }
 
-  Container buildHistoryItem(BuildContext context, String image, IconData icon,
-      String title, String amount) {
+  Container buildHistoryItem(
+      BuildContext context, String image, IconData icon, String title, String amount) {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: 12,
@@ -118,23 +118,22 @@ class HistoryTab extends StatelessWidget {
     );
   }
 
-  Widget getTransactionWidget(
-      BuildContext context, TransactionType type, String amount) {
+  Widget getTransactionWidget(BuildContext context, TransactionType type, String amount) {
     final locale = AppLocalizations.of(context);
 
     switch (type) {
       case TransactionType.pokerEntry:
-        return buildHistoryItem(context, 'assets/wallet/key.png',
-            Icons.remove_circle, locale.pokerEntry, amount);
+        return buildHistoryItem(
+            context, 'assets/wallet/key.png', Icons.remove_circle, locale.pokerEntry, amount);
       case TransactionType.earningAdded:
-        return buildHistoryItem(context, 'assets/wallet/coupon.png',
-            Icons.add_circle, locale.earningAdded, amount);
+        return buildHistoryItem(
+            context, 'assets/wallet/coupon.png', Icons.add_circle, locale.earningAdded, amount);
       case TransactionType.moneyAdded:
-        return buildHistoryItem(context, 'assets/wallet/wallet.png',
-            Icons.add_circle, locale.moneyAdded, amount);
+        return buildHistoryItem(
+            context, 'assets/wallet/wallet.png', Icons.add_circle, locale.moneyAdded, amount);
       case TransactionType.moneyWithdrawal:
-        return buildHistoryItem(context, 'assets/wallet/wallet.png',
-            Icons.remove_circle, locale.moneyWithdrawal, amount);
+        return buildHistoryItem(context, 'assets/wallet/wallet.png', Icons.remove_circle,
+            locale.moneyWithdrawal, amount);
       default:
         return const SizedBox();
     }

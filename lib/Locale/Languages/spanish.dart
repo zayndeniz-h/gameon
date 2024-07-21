@@ -17,8 +17,7 @@ Map<String, String> spanish() {
     "selectBirthdate": "Seleccionar Fecha de nacimiento",
     "wellSendVerificationCode": "Enviaremos código de verificación.",
     "verification": "Verificación",
-    "weveSentSixDigitCode":
-        "Hemos enviado un código de verificación de 6 dígitos.",
+    "weveSentSixDigitCode": "Hemos enviado un código de verificación de 6 dígitos.",
     "enterCode": "Introduzca el código",
     "enterSixDigitCode": "Ingrese el código de 6 dígitos",
     "cashTables": "Mesas de efectivo",
@@ -65,14 +64,11 @@ Map<String, String> spanish() {
     "youAreOnLevel": "Estás en el nivel",
     "earnPointsToReach": "Gane 129 puntos más para alcanzar el nivel 90",
     "howItWorks": "¿Cómo funciona?",
-    "youllGetPoints":
-        "Obtendrá 10 puntos en cada partido pagado al que se unió.",
+    "youllGetPoints": "Obtendrá 10 puntos en cada partido pagado al que se unió.",
     "joinedMatch": "es decir, se unió a 2 partidos = 20 puntos",
-    "ifYouJoinedAndWon":
-        "Si te uniste y ganaste el concurso, obtendrás 1.5 veces puntos.",
+    "ifYouJoinedAndWon": "Si te uniste y ganaste el concurso, obtendrás 1.5 veces puntos.",
     "earnedPoints": "es decir, ganó 300 puntos x1.5 = 450 puntos",
-    "ifYouJoinedAndLose":
-        "Si te uniste y pierdes el concurso, obtendrás 1.0x de puntos.",
+    "ifYouJoinedAndLose": "Si te uniste y pierdes el concurso, obtendrás 1.0x de puntos.",
     "losePoints": "es decir, pierda 300 puntos x1.0 = 300 puntos",
     "leaderboard": "Tabla de clasificación",
     "knowWhereYouStandInCompetition": "Sepa dónde está en competencia",
@@ -111,18 +107,15 @@ Map<String, String> spanish() {
     "moneyAdded": "Dinero agregado",
     "moneyWithdrawal": "Retiro de dinero",
     "offer1": "50% de reembolso de complemento",
-    "offer1Subtitle":
-        "Agregue \$ 50 y más y obtenga un 50% de reembolso adicional",
+    "offer1Subtitle": "Agregue \$ 50 y más y obtenga un 50% de reembolso adicional",
     "offer2": "Bono de bienvenida",
     "offer2Subtitle": "Comience su primer juego con entrada gratuita",
     "offer3": "Cada tercer rendimiento de pérdida",
     "offer3Subtitle": "Cada tercer rendimiento de pérdida",
     "offer4": "Flat 30% Cashback",
-    "offer4Subtitle":
-        "Agregue \$ 30 en la billetera y obtenga el 30% de reembolso",
+    "offer4Subtitle": "Agregue \$ 30 en la billetera y obtenga el 30% de reembolso",
     "offer5": "Hasta el 10% de reembolso",
-    "offer5Subtitle":
-        "Agregue \$ 30 en la billetera y obtenga el 30% de reembolso",
+    "offer5Subtitle": "Agregue \$ 30 en la billetera y obtenga el 30% de reembolso",
     "apply": "Aplicar",
     "walletBalance": "Equilibrio de billetera",
     "topUpYourWalletBalance": "Tomar el equilibrio de su billetera",
