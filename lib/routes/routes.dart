@@ -11,6 +11,9 @@ import 'package:teen_patti/features/bottom_navigation/wallet/add_cash_screen.dar
 import 'package:teen_patti/features/bottom_navigation/wallet/refer_and_earn_screen.dart';
 import 'package:teen_patti/features/language/ui/language_sheet.dart';
 
+import '../features/bottom_navigation/lobby/mainTableGame.dart';
+import '../features/bottom_navigation/lobby/tableScreen.dart';
+
 class PageRoutes {
   static const String bottomNavigation = 'bottom_navigation';
   static const String pokerRoomScreen = 'poker_room';
@@ -27,7 +30,7 @@ class PageRoutes {
   Map<String, WidgetBuilder> routes() {
     return {
       bottomNavigation: (context) => const BottomNavigation(),
-      pokerRoomScreen: (context) => const PokerRoomScreen(),
+      pokerRoomScreen: (context) => const TeenPattiTable(),
       addCashScreen: (context) => const AddCashScreen(),
       referEarnScreen: (context) => const ReferAndEarnScreen(),
       myProfileScreen: (context) => const MyProfileScreen(),

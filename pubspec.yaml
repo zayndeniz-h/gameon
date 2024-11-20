@@ -19,6 +19,10 @@ dependencies:
   shared_preferences: ^2.0.13
   animation_wrappers: ^3.0.0
   flutter_bloc: ^8.1.6
+  audioplayers:
+  flame:
+  flame_audio:
+  animated_flip_counter: ^0.3.4
 
 dev_dependencies:
   flutter_test:
@@ -52,6 +56,10 @@ flutter:
     - assets/wallet/
     - assets/menu_icons/
     - assets/point_levels/
+    - assets/audio/
+    - assets/images/
+    - assets/images/cards/
+    - assets/images/avatars/
 
   fonts:
     - family: ProductSans
