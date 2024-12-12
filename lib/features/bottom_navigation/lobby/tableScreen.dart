@@ -1,12 +1,17 @@
 import 'package:animated_flip_counter/animated_flip_counter.dart';
+import 'package:flip_card/flip_card.dart';
+import 'package:flip_card/flip_card_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:teen_patti/models/playerGameModel.dart';
 import '../../../Locale/locales.dart';
 import '../../../components/circular_icon_button.dart';
 import '../../../components/custom_button.dart';
+import '../../../models/gameModel.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/utils.dart'; // For sounds
 import 'package:collection/collection.dart';
@@ -22,6 +27,8 @@ class _TeenPattiTableState extends State<TeenPattiTable>
     with TickerProviderStateMixin {
   // late AnimationController _cardAnimationController;
   final AudioPlayer _audioPlayer = AudioPlayer();
+  late FlipCardController _controller;
+
   bool cardsDistributed = false;
   bool cardsDisplayed1 = false;
 
@@ -32,57 +39,86 @@ class _TeenPattiTableState extends State<TeenPattiTable>
 
   var _value = 0.0;
 
+  bool showBest = false;
+
+  Game newGame = Game(
+    gameId: 'game123',
+    createdAt: DateTime.now().toLocal(), // Format as ISO 8601 string
+    status: GameStatus.WAITING,
+    betAmount: 100.0,
+  );
+
+
   var playerList = [
     PlayerGameModel(
-        card1: false, card2: false, card3: false, name: "You", image: "", chaal:  chaalStatus.INIT),
+        card1: false,
+        card2: false,
+        card3: false,
+        name: "You",
+        image: "",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
     PlayerGameModel(
         card1: false,
         card2: false,
         card3: false,
         name: "Faizan",
-        image: "image", chaal:  chaalStatus.INIT),
+        image: "image",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
     PlayerGameModel(
         card1: false,
         card2: false,
         card3: false,
         name: "Salman",
-        image: "image", chaal:  chaalStatus.INIT),
+        image: "image",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
     PlayerGameModel(
         card1: false,
         card2: false,
         card3: false,
         name: "Suleman",
-        image: "image", chaal:  chaalStatus.INIT),
+        image: "image",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
     PlayerGameModel(
         card1: false,
         card2: false,
         card3: false,
         name: "Noman",
-        image: "image", chaal:  chaalStatus.INIT),
+        image: "image",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
     PlayerGameModel(
         card1: false,
         card2: false,
         card3: false,
         name: "Shezwan",
-        image: "image", chaal:  chaalStatus.INIT),
+        image: "image",
+        chaal: ChaalStatus.INIT,cardControllers:List.generate(3, (_) => FlipCardController()),),
   ];
 
   @override
   void initState() {
     super.initState();
+    _controller = FlipCardController();
 
-    // Animation controller for the card distribution
-    // _cardAnimationController = AnimationController(
-    //   vsync: this,
-    //   duration: Duration(milliseconds: 500),
-    // );
+ startGame();
 
-    // _cardAnimationController.addListener(() {
-    //   if (_cardAnimationController.status == AnimationStatus.forward) {
-    // Play card dealing sound during animation
-    // _playSound('card_deal.mp3');
-    // }
-    // });
+
+  }
+
+  Future<void> startGame() async {
+    await Future.delayed(Duration(milliseconds: 300));
+    setState(() {
+      showBest = true;
+    });
+
+    await Future.delayed(Duration(seconds: 5));
+
+    setState(() {
+      newGame.status = GameStatus.IN_PROGREES;
+    });
+
+    await Future.delayed( Duration(seconds: 5));
+    startFirstCoinAdd(0.3);
+
   }
 
   @override
@@ -98,15 +134,13 @@ class _TeenPattiTableState extends State<TeenPattiTable>
 
   Future<void> _startCardDistribution() async {
     _playSound('card_deal.mp3');
-    setState(() {
-
-    });
+    setState(() {});
     for (int i = 0; i < (playerList.length * 3); i++) {
       await Future.delayed(Duration(milliseconds: 300), () {
         int playerIndex = i % playerList.length;
         int cardIndex = i ~/ playerList.length;
 
-        print("$i playerInde = ${playerIndex} ${cardIndex}");
+        print("$i playerInde = 2${playerIndex} ${cardIndex}");
 
         if (cardIndex == 0) {
           playerList[playerIndex].card1 = true;
@@ -136,70 +170,44 @@ class _TeenPattiTableState extends State<TeenPattiTable>
     });
   }
 
-  Future<void> chaalForPlayer(PlayerGameModel playerGameModel,double coins) async {
+  Future<void> chaalForPlayer(PlayerGameModel playerGameModel, double coins,
+      {bool? playSound}) async {
     setState(() {
-      playerGameModel.chaal = chaalStatus.PROCESSING;
+      playerGameModel.chaal = ChaalStatus.PROCESSING;
     });
 
-    _playSound('audio/coin.mp3');
+    if (playSound ?? false) {
+      _playSound('audio/coin.mp3');
+    }
 
-    _value += coins;
     await Future.delayed(Duration(milliseconds: 200)).then((value) {
       setState(() {
-        playerGameModel.chaal = chaalStatus.INIT;
+        playerGameModel.chaal = ChaalStatus.INIT;
       });
     });
+    _value += coins;
     setState(() {
-      playerGameModel.chaal = chaalStatus.DONE;
+      playerGameModel.chaal = ChaalStatus.DONE;
     });
     Future.delayed(Duration(milliseconds: 4000)).then((value) {
       setState(() {
-        playerGameModel.chaal = chaalStatus.INIT;
+        playerGameModel.chaal = ChaalStatus.INIT;
       });
     });
-
   }
-
 
   Future<void> startFirstCoinAdd(double initialCoins) async {
     // _playSound('card_deal.mp3');
-    setState(() {
-
-    });
+    _playSound('audio/coinchaal.mp3');
+    setState(() {});
     for (int i = 0; i < (playerList.length); i++) {
-      // await Future.delayed(Duration(milliseconds: 300), () {
-      //   int playerIndex = i % playerList.length;
-      //   int cardIndex = i ~/ playerList.length;
-      //
-      //   print("$i playerInde = ${playerIndex} ${cardIndex}");
-
-        // if (cardIndex == 0) {
-        //   playerList[playerIndex].card1 = true;
-        // } else if (cardIndex == 1) {
-        //   playerList[playerIndex].card2 = true;
-        // } else if (cardIndex == 2) {
-        //   playerList[playerIndex].card3 = true;
-        // }
-
-      chaalForPlayer(playerList[i],initialCoins);
+      await chaalForPlayer(playerList[i], initialCoins);
 
       setState(() {});
-      // });
-
-      // setState(() {
-      //   if(i == 0){
-      //     cardsDisplayed1 = true;
-      //   }
-      //   if(i == 1){
-      //     cardsDisplayed2 = true;
-      //   }
-      //   if(i == 2){
-      //     cardsDisplayed3 = true;
-      //   }
-      // });
     }
+    await Future.delayed(Duration(seconds: 5));
+    await _startCardDistribution();
   }
-
 
   Widget buildPlayerIcon(String name, {bool? cardsOpened}) {
     return Column(
@@ -261,93 +269,41 @@ class _TeenPattiTableState extends State<TeenPattiTable>
     );
   }
 
-  // Widget _buildCardDisplay(PlayerGameModel playerModel,cardsDisplayed,double startright,double startbottom,double endrigt,double endbottom) {
-  //   return AnimatedPositioned(
-  //     duration: Duration(milliseconds: 500),
-  //
-  //     right: cardsDisplayed ? endrigt : startright,
-  //     top: cardsDisplayed ? endbottom : startbottom,
-  //     child: !cardsDistributed ? Image.asset(
-  //       'assets/card.png',
-  //       height: 40,
-  //     ) :
-  //     Row(
-  //       children: [
-  //        if(playerModel.card1) Image.asset(
-  //           'assets/cards/card1.png',
-  //           height: 40,
-  //         ),
-  //         const SizedBox(width: 6),
-  //         if(playerModel.card2) Image.asset(
-  //           'assets/cards/card2.png',
-  //           height: 40,
-  //         ),
-  //         const SizedBox(width: 6),
-  //         if(playerModel.card3)   Image.asset(
-  //           'assets/cards/card3.png',
-  //           height: 40,
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
-
   Widget _buildCardDisplay2(
       PlayerGameModel playerModel,
-      cardsDisplayed,
+      cardDistributed,
       double startright,
       double startbottom,
       double endrigt,
       double endbottom,
       index) {
     return AnimatedPositioned(
-      duration: Duration(milliseconds: 300),
-
-      right: cardsDisplayed ? endrigt : startright,
-      top: cardsDisplayed ? endbottom : startbottom,
-      child: Image.asset(
-        'assets/card.png',
-        height: 40,
-      ),
-      // !cardsDistributed ?
-      // Stack(
-      //   children: [
-      //     if(playerModel.card1) Image.asset(
-      //       'assets/card.png',
-      //       height: 40,
-      //     ),
-      //     const SizedBox(width: 6),
-      //     if(playerModel.card2) Image.asset(
-      //       'assets/card.png',
-      //       height: 40,
-      //     ),
-      //     const SizedBox(width: 6),
-      //     if(playerModel.card3)   Image.asset(
-      //       'assets/card.png',
-      //       height: 40,
-      //     ),
-      //   ],
-      // )
-      //     :
-      // Row(
-      //   children: [
-      //     if(playerModel.card1) Image.asset(
-      //       'assets/cards/card1.png',
-      //       height: 40,
-      //     ),
-      //     const SizedBox(width: 6),
-      //     if(playerModel.card2) Image.asset(
-      //       'assets/cards/card2.png',
-      //       height: 40,
-      //     ),
-      //     const SizedBox(width: 6),
-      //     if(playerModel.card3)   Image.asset(
-      //       'assets/cards/card3.png',
-      //       height: 40,
-      //     ),
-      //   ],
-      // ),
-    );
+        duration: Duration(milliseconds: 300),
+        right: playerModel.seen ?? false
+            ? endrigt -
+                (index == 2
+                    ? 30
+                    : index == 1
+                        ? 15
+                        : 0)
+            : (cardDistributed ? endrigt : startright),
+        top: (cardDistributed ? endbottom : startbottom),
+        child: FlipCard(
+          fill: Fill
+              .fillBack, // Fill the back side of the card to make in the same size as the front.
+          direction: FlipDirection.HORIZONTAL, // default
+          side: CardSide.FRONT, // The side to initially display.
+          controller: playerModel.cardControllers[index],
+          front: Image.asset(
+            'assets/card.png',
+            height: 40,
+          ),
+          back: Image.asset(
+            'assets/cards/card1.png',
+            height: 40,
+          ),
+          flipOnTouch: false,
+        ));
   }
 
   @override
@@ -472,8 +428,8 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                     Text(
                       locale.potAmt,
                       style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Theme.of(context).highlightColor,
-                      ),
+                            color: Theme.of(context).highlightColor,
+                          ),
                     ),
                     const SizedBox(
                       height: 12,
@@ -482,7 +438,9 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
-                        color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
+                        color: Theme.of(context)
+                            .scaffoldBackgroundColor
+                            .withOpacity(0.6),
                       ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
@@ -498,9 +456,10 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                             value: _value,
                             fractionDigits: 2, // decimal precision
                             suffix: rupeeSyumbol,
-                            textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: Theme.of(context).highlightColor,
-                            ),
+                            textStyle:
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: Theme.of(context).highlightColor,
+                                    ),
                           ),
                           const SizedBox(
                             width: 6,
@@ -546,7 +505,8 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                       SizedBox(width: widthFactor(20)),
                       Expanded(
                         child: CustomButton(
-                          onTap: (){startFirstCoinAdd(0.5);},
+                          onTap: () {
+                          },
                           title: '${locale.check}/${locale.callAny}',
                           bgImage: 'assets/button/button5.png',
                           style:
@@ -568,13 +528,13 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                     switch (index) {
                       case 0:
                         return [
-
                           Positioned(
                             top: heightFactor(330),
                             right: size.width / 2 - widthFactor(60),
                             child: buildPlayerIcon('Player $index',
                                 cardsOpened: cardIndex >= 1),
                           ),
+
                           _buildCardDisplay2(
                               playerModel,
                               playerModel.card1,
@@ -599,18 +559,40 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               size.width / 2 - widthFactor(135),
                               heightFactor(355),
                               2),
-                         if(cardsDistributed) Positioned(
-                            top: heightFactor(360),
-                            right: size.width / 2 - widthFactor(145),
-                            child: Card(
-                              color:Theme.of(context).primaryColorLight,
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 10.0,vertical: 0),
-                                child: Text("See",style: TextStyle(fontSize: 10,color: Theme.of(context).canvasColor,),),
+                          if (cardsDistributed &&
+                              (!(playerModel.seen ?? false)))
+                            Positioned(
+                              top: heightFactor(360),
+                              right: size.width / 2 - widthFactor(145),
+                              child: InkWell(
+                                onTap: () async {
+                                  setState(() {
+                                    playerModel.seen = true;
+                                  });
+                                  await Future.delayed(Duration(milliseconds: 300));
+                                  playerModel.cardControllers[0].toggleCard();
+                                  playerModel.cardControllers[1].toggleCard();
+                                  playerModel.cardControllers[2].toggleCard();
+
+                                },
+                                child: Card(
+                                  color: Theme.of(context).primaryColorLight,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10.0, vertical: 0),
+                                    child: Text(
+                                      "See",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        color: Theme.of(context).canvasColor,
+                                      ),
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                          animatedCoinWidget( playerModel,
+                          animatedCoinWidget(
+                              playerModel,
                               playerModel.chaal,
                               // heightFactor(330),
                               // size.width / 2 - widthFactor(60),
@@ -618,8 +600,8 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               heightFactor(364),
                               size.width / 2 - widthFactor(53),
                               heightFactor(161),
-
-                              2,0.5),
+                              2,
+                              0.5),
                         ];
 
                       case 1:
@@ -654,14 +636,15 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               widthFactor(190),
                               heightFactor(295),
                               2),
-                          animatedCoinWidget(  playerModel,
+                          animatedCoinWidget(
+                              playerModel,
                               playerModel.chaal,
-                             widthFactor(40),
+                              widthFactor(40),
                               heightFactor(305),
                               size.width / 2 - widthFactor(53),
                               heightFactor(161),
-                              2,0.5),
-
+                              2,
+                              0.5),
                         ];
 
                       case 2:
@@ -696,6 +679,15 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               widthFactor(530),
                               heightFactor(295),
                               2),
+                          animatedCoinWidget(
+                              playerModel,
+                              playerModel.chaal,
+                              widthFactor(565),
+                              heightFactor(305),
+                              size.width / 2 - widthFactor(53),
+                              heightFactor(161),
+                              2,
+                              0.5),
                         ];
 
                       case 3:
@@ -730,6 +722,15 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               widthFactor(190),
                               heightFactor(113),
                               2),
+                          animatedCoinWidget(
+                              playerModel,
+                              playerModel.chaal,
+                              widthFactor(40),
+                              heightFactor(125),
+                              size.width / 2 - widthFactor(53),
+                              heightFactor(161),
+                              2,
+                              0.5),
                         ];
 
                       case 4:
@@ -740,6 +741,15 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                             child: buildPlayerIcon('Player {$index}',
                                 cardsOpened: cardIndex >= 1),
                           ),
+                          animatedCoinWidget(
+                              playerModel,
+                              playerModel.chaal,
+                              widthFactor(565),
+                              heightFactor(125),
+                              size.width / 2 - widthFactor(53),
+                              heightFactor(161),
+                              2,
+                              0.5),
                           _buildCardDisplay2(
                               playerModel,
                               playerModel.card1,
@@ -798,6 +808,17 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                               size.width / 2 - widthFactor(135),
                               heightFactor(58),
                               2),
+                          animatedCoinWidget(
+                              playerModel,
+                              playerModel.chaal,
+                              // heightFactor(330),
+                              // size.width / 2 - widthFactor(60),
+                              size.width / 2 - widthFactor(60),
+                              heightFactor(70),
+                              size.width / 2 - widthFactor(53),
+                              heightFactor(161),
+                              2,
+                              0.5),
                         ];
 
                       default:
@@ -837,7 +858,42 @@ class _TeenPattiTableState extends State<TeenPattiTable>
                   })
                   .toList()
                   .expand((element) => element),
+              if(newGame.status == GameStatus.WAITING)   Align(
+                alignment: Alignment.center,
+                child: Container(
+                  height: double.infinity,
+                  width: double.infinity,
+                  color: Colors.black.withOpacity(0.9),
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 40),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("GAME IS GETTING STARTED",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w900,color: Colors.white),),
 
+
+                              Container(
+                                  child: Center(child: Shimmer.fromColors(child: Text("PLEASE WAIT...",style: TextStyle(fontSize: 22,fontWeight: FontWeight.w900),), baseColor: Colors.green.withOpacity(1), highlightColor: Colors.white))),
+                              ClipRRect(
+                                child: Image.asset("assets/loadingImage.png"),
+                              ),
+                                AnimatedSlide(offset: Offset(showBest ? 0 : 100, 0), duration:  Duration(seconds: 2),child: Text("BEST OF LUCK",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w900,color: Colors.yellow),),),
+                              // AnimatedScale(
+                              //     scale: 1,
+                              //     child: Text("BEST OF LUCK",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w900,color: Colors.yellow),), duration: Duration(seconds: 2))
+                            ],
+                          ),
+                        ),
+                      ),
+
+                    ],
+                  ),
+                ),
+              )
               // Positioned(
               //   top: heightFactor(100),
               //   left: widthFactor(40),
@@ -1432,62 +1488,66 @@ class _TeenPattiTableState extends State<TeenPattiTable>
     );
   }
 
-  Widget animatedCoinWidget( PlayerGameModel playerModel,
-      chaalStatus cardsDisplayed,
+  Widget animatedCoinWidget(
+      PlayerGameModel playerModel,
+      ChaalStatus cardsDisplayed,
       double startright,
       double startbottom,
       double endrigt,
       double endbottom,
-      index,double coinsAdded){
-    return cardsDisplayed == chaalStatus.INIT ? SizedBox.shrink() :AnimatedPositioned(
-      duration: Duration(milliseconds: 800),
-
-      right:  cardsDisplayed == chaalStatus.DONE ? endrigt : startright,
-      top:cardsDisplayed == chaalStatus.DONE  ? endbottom : startbottom,
-      child: AnimatedScale(
-        duration: Duration(milliseconds: 1200),
-        scale:  cardsDisplayed == chaalStatus.DONE   ? 0 : 1.5,
-        child: AnimatedOpacity(
-          duration: Duration(milliseconds: 1200),
-
-          opacity:  cardsDisplayed == chaalStatus.DONE  ? 0 : 1,
-          child: Container(
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(16),
-              color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
-            ),
-            child: AnimatedOpacity(
-              opacity: 1,
-              duration: Duration(milliseconds: 300),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(
-                    'assets/coin.png',
-                    height: 16,
+      index,
+      double coinsAdded) {
+    return cardsDisplayed == ChaalStatus.INIT
+        ? SizedBox.shrink()
+        : AnimatedPositioned(
+            duration: Duration(milliseconds: 1200),
+            right: cardsDisplayed == ChaalStatus.DONE ? endrigt : startright,
+            top: cardsDisplayed == ChaalStatus.DONE ? endbottom : startbottom,
+            child: AnimatedScale(
+              duration: Duration(milliseconds: 1200),
+              scale: cardsDisplayed == ChaalStatus.DONE ? 0 : 1.5,
+              child: AnimatedOpacity(
+                duration: Duration(milliseconds: 1200),
+                opacity: cardsDisplayed == ChaalStatus.DONE ? 0 : 1,
+                child: Container(
+                  padding: const EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Theme.of(context)
+                        .scaffoldBackgroundColor
+                        .withOpacity(0.6),
                   ),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                  AnimatedFlipCounter(
-                    value: coinsAdded,
-                    fractionDigits: 2, // decimal precision
-                    suffix: rupeeSyumbol,
-                    textStyle: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Theme.of(context).highlightColor,
+                  child: AnimatedOpacity(
+                    opacity: 1,
+                    duration: Duration(milliseconds: 300),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'assets/coin.png',
+                          height: 16,
+                        ),
+                        const SizedBox(
+                          width: 6,
+                        ),
+                        AnimatedFlipCounter(
+                          value: coinsAdded,
+                          fractionDigits: 2, // decimal precision
+                          suffix: rupeeSyumbol,
+                          textStyle:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: Theme.of(context).highlightColor,
+                                  ),
+                        ),
+                        const SizedBox(
+                          width: 6,
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(
-                    width: 6,
-                  ),
-                ],
+                ),
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
   }
-
 }
