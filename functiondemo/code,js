@@ -1,0 +1,179 @@
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
+admin.initializeApp();
+
+const db = admin.firestore();
+
+// Helper to generate a deck of cards
+const generateDeck = () => {
+  const suits = ["hearts", "diamonds", "clubs", "spades"];
+  const ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+  let deck = [];
+  suits.forEach(suit => {
+    ranks.forEach(rank => {
+      deck.push({ suit, rank });
+    });
+  });
+  return deck.sort(() => Math.random() - 0.5); // Shuffle deck
+};
+
+/**
+ * Create a new game
+ */
+exports.createGame = functions.https.onCall(async (data, context) => {
+  const { betAmount } = data;
+  const gameId = db.collection("Games").doc().id;
+  const newGame = {
+    createdAt: new Date().toISOString(),
+    status: "WAITING",
+    players: [],
+    currentTurn: null,
+    deck: generateDeck(),
+    distributedCards: [],
+    betAmount,
+  };
+
+  await db.collection("Games").doc(gameId).set(newGame);
+  return { gameId };
+});
+
+/**
+ * Join a game
+ */
+exports.joinGame = functions.https.onCall(async (data, context) => {
+  const { gameId, playerId, playerName, playerImage } = data;
+
+  const gameRef = db.collection("Games").doc(gameId);
+  const game = await gameRef.get();
+
+  if (!game.exists) {
+    throw new functions.https.HttpsError("not-found", "Game not found.");
+  }
+
+  const gameData = game.data();
+
+  if (gameData.status !== "WAITING") {
+    throw new functions.https.HttpsError("failed-precondition", "Cannot join a game that has already started.");
+  }
+
+  const updatedPlayers = [...gameData.players, { playerId, playerName, playerImage, status: "ACTIVE" }];
+  await gameRef.update({ players: updatedPlayers });
+
+  if (updatedPlayers.length >= 2) { // Example: minimum 2 players
+    await gameRef.update({ status: "READY" });
+  }
+
+  return { success: true };
+});
+
+/**
+ * Start card distribution
+ */
+exports.startCardDistribution = functions.https.onCall(async (data, context) => {
+  const { gameId } = data;
+
+  const gameRef = db.collection("Games").doc(gameId);
+  const game = await gameRef.get();
+
+  if (!game.exists) {
+    throw new functions.https.HttpsError("not-found", "Game not found.");
+  }
+
+  const gameData = game.data();
+
+  if (gameData.status !== "READY") {
+    throw new functions.https.HttpsError("failed-precondition", "Game is not ready to start.");
+  }
+
+  const deck = gameData.deck;
+  const players = gameData.players;
+
+  const distributedCards = players.map((player, index) => {
+    return {
+      playerId: player.playerId,
+      card1: deck[index * 3],
+      card2: deck[index * 3 + 1],
+      card3: deck[index * 3 + 2],
+    };
+  });
+
+  await gameRef.update({
+    distributedCards,
+    status: "CARD_DISTRIBUTION",
+  });
+
+  // Simulate card distribution delay and transition to IN_PROGRESS
+  setTimeout(async () => {
+    await gameRef.update({ status: "IN_PROGRESS", currentTurn: players[0].playerId });
+  }, players.length * 900); // Adjust delay based on card distribution animation
+
+  return { success: true };
+});
+
+/**
+ * Handle player action
+ */
+exports.playerAction = functions.https.onCall(async (data, context) => {
+  const { gameId, playerId, action, betAmount } = data;
+
+  const gameRef = db.collection("Games").doc(gameId);
+  const game = await gameRef.get();
+
+  if (!game.exists) {
+    throw new functions.https.HttpsError("not-found", "Game not found.");
+  }
+
+  const gameData = game.data();
+
+  if (gameData.currentTurn !== playerId) {
+    throw new functions.https.HttpsError("failed-precondition", "It's not the player's turn.");
+  }
+
+  // Handle different player actions: bet, fold, etc.
+  let updatedPlayers = gameData.players.map(player => {
+    if (player.playerId === playerId) {
+      if (action === "FOLD") {
+        return { ...player, status: "FOLDED" };
+      }
+      if (action === "BET") {
+        return { ...player, betAmount: (player.betAmount || 0) + betAmount };
+      }
+    }
+    return player;
+  });
+
+  // Determine next turn
+  const activePlayers = updatedPlayers.filter(player => player.status === "ACTIVE");
+  const currentIndex = activePlayers.findIndex(player => player.playerId === playerId);
+  const nextPlayer = activePlayers[(currentIndex + 1) % activePlayers.length];
+
+  await gameRef.update({ players: updatedPlayers, currentTurn: nextPlayer.playerId });
+
+  return { success: true };
+});
+
+/**
+ * Handle disconnection
+ */
+exports.handleDisconnection = functions.https.onCall(async (data, context) => {
+  const { gameId, playerId } = data;
+
+  const gameRef = db.collection("Games").doc(gameId);
+  const game = await gameRef.get();
+
+  if (!game.exists) {
+    throw new functions.https.HttpsError("not-found", "Game not found.");
+  }
+
+  const gameData = game.data();
+  const updatedPlayers = gameData.players.map(player => {
+    if (player.playerId === playerId) {
+      return { ...player, status: "DISCONNECTED" };
+    }
+    return player;
+  });
+
+  await gameRef.update({ players: updatedPlayers });
+
+  return { success: true };
+});
